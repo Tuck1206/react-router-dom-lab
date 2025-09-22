@@ -1,20 +1,18 @@
-// src/components/MailboxList/MailboxList.jsx
 import { Link } from "react-router";
 
-const MailboxList = (props) => {
-
-    return (
+const MailboxList=({ mailboxes })=> {
+  return (
     <>
+   
       <h2>Mailboxes</h2>
-      <ul>
-        {props.mailboxes.map((currentMailbox) => (
-            <li key ={currentMailbox.name}>
-          <Link to={`/mailboxes/${currentMailbox._id}`}>
-           {currentMailbox.name}
+      <div>
+        {mailboxes.map((mailbox) => (
+          <Link key={mailbox._id} to={`/mailboxes/${mailbox._id}`}>
+            <div className="mail-box">Mailbox {mailbox._id}</div>
           </Link>
-        </li>
-        ))}
-      </ul>
+            ))}
+      </div>
+   
     </>
   );
 }
