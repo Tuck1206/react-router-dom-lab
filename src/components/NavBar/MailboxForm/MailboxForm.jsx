@@ -22,6 +22,7 @@ const MailboxForm =({ addBox })=> {
           Owner:
           <input
             type="text"
+            name="name"
             value={boxOwner}
             onChange={(e) => setBoxOwner(e.target.value)}
             required
